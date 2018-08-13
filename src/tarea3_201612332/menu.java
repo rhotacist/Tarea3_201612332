@@ -14,6 +14,10 @@ public class menu {
     
         public static Scanner leer = new Scanner(System.in); //para capturar el teclado
         public static int opcion;//variable para la seleccion de opciones  
+        public static int i; //variable que ayudara a imprimir datos del arreglo
+        //creare arriba el arreglo vacio para que cuando regrese a los metodos no borre su contenido
+        public static String[] nombres = new String[5];
+        public static int contador=1;//me servira para mostrar numeracion
     /**
      * @param args the command line arguments
      */
@@ -47,19 +51,18 @@ public class menu {
                     break;
                     
             case 5: System.exit(0);
-                    System.out.println("••• SALIENDO DE PROGRAMA...");
+                    System.err.println("••• SALIENDO DE PROGRAMA...");
                     break;
                     
             default: menu.main(args);
+                System.err.print("Ingrese opcion valida... ");
         }
         
     }
 
         static void metodo_usuarios() {
-            int i; //variable que ayudara a imprimir datos del arreglo
-            //creare arriba el arreglo vacio
-            String[] nombres = new String[5];
-            //creare un scanner de tipo string
+            
+            
             
             
         System.out.println("-PROGRAMA USUARIOS");
@@ -79,7 +82,7 @@ public class menu {
                     nombres[1]= leer.next();
                     //verifica si el nombre 2 concuerda con el uno
                     while (nombres[1].equals(nombres[0])){
-                        System.out.println("Usuario "+nombres[1]+" Existente, Ingrese nuevo usuario #2");
+                        System.err.println("Usuario "+nombres[1]+" Existente, Ingrese nuevo usuario #2");
                         nombres[1]= leer.next();
                     }
                     
@@ -87,7 +90,7 @@ public class menu {
                     nombres[2]= leer.next();
                     //verifica si el nombre 3 concuerda con el 1 o el 2
                     while (nombres[2].equals(nombres[1]) || nombres[2].equals(nombres[0])){
-                        System.out.println("Usuario "+nombres[2]+" Existente, Ingrese nuevo usuario #3");
+                        System.err.println("Usuario "+nombres[2]+" Existente, Ingrese nuevo usuario #3");
                         nombres[2]= leer.next();
                     }
                     
@@ -95,7 +98,7 @@ public class menu {
                     nombres[3]= leer.next();
                     //verifica si el nombre 4 concuerda con el 1,2 o 3
                     while (nombres[3].equals(nombres[0]) || nombres[3].equals(nombres[1]) ||nombres[3].equals(nombres[2]) ){
-                        System.out.println("Usuario "+nombres[3]+" Existente, Ingrese nuevo usuario #4");
+                        System.err.println("Usuario "+nombres[3]+" Existente, Ingrese nuevo usuario #4");
                         nombres[3]= leer.next();
                     }
                     
@@ -103,30 +106,78 @@ public class menu {
                     nombres[4]= leer.next();
                     //verifica si el nombre 5 concuerda con el 1,2,3 o 4
                     while (nombres[4].equals(nombres[0]) || nombres[4].equals(nombres[1]) ||nombres[4].equals(nombres[2]) || nombres[4].equals(nombres[3]) ){
-                        System.out.println("Usuario "+nombres[4]+" Existente, Ingrese nuevo usuario #5");
+                        System.err.println("Usuario "+nombres[4]+" Existente, Ingrese nuevo usuario #5");
                         nombres[4]= leer.next();
                     }
                     
-                    System.out.print("Nombres Ingresados: ");
+                    System.out.print("Usuarios Ingresados: ");
                     //usare un ciclo for para que me imprima los nombres ingresados anterior mente
                         for (i=0;i<nombres.length; i++){
                             System.out.print(nombres[i]+", ");
                             
                         }
+                    System.out.println("Usuarios creados correctamente...");
+                    System.err.println("Regresando...");  
+                    menu.metodo_usuarios();
                         
-            case 2: metodo_contador();
-                    break;
+                        
+            case 2: //programa que muestra usuarios ascendente
+                contador=1; //resetea el valor del contador
+                    if("null".equals(nombres[0]) || "null".equals(nombres[1]) || "null".equals(nombres[2]) || "null".equals(nombres[3]) || "null".equals(nombres[4])){
+                        System.err.println("El arreglo de usuarios no ha sido creado");
+                        System.err.println("Ingrese usuarios primero...");
+                        menu.metodo_usuarios();
+                    }
+                        System.out.println("Mostrando Usuarios Ascendente...");
+                            for (i=4;i>-1; --i){//el arreglo sera recorrido desde su tamaño, hasta que llegue a 0
+                                System.out.print(contador+ "→|");
+                                contador++;
+                            System.out.println(nombres[i]);
+                            
+                        
+                        }
+                    
+                    
+                      System.err.println("Regresando...");  
+                      menu.metodo_usuarios();
+                        break;
+                    
             
-            case 3: metodo_organizar();
-                    break;
+            case 3: //programa que muestra usuarios descentente
+                contador=1; //resetea el valor del contador
+                if("null".equals(nombres[0]) || "null".equals(nombres[1]) || "null".equals(nombres[2]) || "null".equals(nombres[3]) || "null".equals(nombres[4])){
+                        System.err.println("El arreglo de usuarios no ha sido creado");
+                        System.err.println("Ingrese usuarios primero...");
+                        menu.metodo_usuarios();
+                    }
+                
+                        System.out.println("Mostrando Usuarios Ascendente...");
+                            for (i=0;i<nombres.length; i++){//el arreglo sera recorrido desde 0 hasta 4
+                                System.out.print(contador+ "→|");
+                                contador++;
+                            System.out.println(nombres[i]);
+                            
+                        
+                        }
                     
-            case 4: metodo_promedio();
+                    
+                      System.err.println("Regresando...");  
+                      menu.metodo_usuarios();
+                        break;
+            
+                    
+                    
+            case 4://regresa al menu principal
+                System.out.println("••• Regresando a menu principal...");
+                    menu.main(null);
                     break;
                     
             
                     
-            default: metodo_usuarios();
-                    System.out.println("Ingrese opcion valida");
+            default: //vuelve a cargar el menu si no se es seleccionada ninguna opcion valida
+                metodo_usuarios();
+                    System.err.println("Ingrese opcion valida");
+                    
         }
     }
 
