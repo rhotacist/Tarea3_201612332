@@ -35,15 +35,16 @@ public class menu {
         // TODO code application logic here
         
         //Inicio de menu...
-        
-        System.out.println("[IPC1]Tarea3_201612332");
+        System.out.println("×××××××××××××××××××××××××××××××");
+        System.out.println("\033[32m[IPC1]Tarea3_201612332");
         System.out.println("");
-        System.out.println("1. Usuarios");
-        System.out.println("2. Contador de digitos repetidos");
-        System.out.println("3. Tres número de mayor a menor");
-        System.out.println("4. Calcular promedio");
-        System.out.println("5. Salir");
+        System.out.println("\033[32m1. \033[30mUsuarios");
+        System.out.println("\033[32m2. \033[30mContador de digitos repetidos");
+        System.out.println("\033[32m3. \033[30mTres número de mayor a menor");
+        System.out.println("\033[32m4. \033[30mCalcular promedio");
+        System.out.println("\033[32m5. \033[30mSalir");
         System.out.println("→Ingrese numero de opcion: ");
+        System.out.println("×××××××××××××××××××××××××××××××");
          opcion = leer.nextInt(); //crea y almacena una variable de tipo entero para la opcion
         
         switch(opcion){
@@ -74,12 +75,13 @@ public class menu {
             
             
             
-            
+         System.out.println("×××××××××××××××××××××××××××××××");   
         System.out.println("-PROGRAMA USUARIOS");
         System.out.println("1. Ingresar Usuarios");
         System.out.println("2. Mostrar Usuarios ascendente");
         System.out.println("3. Mostrar Usuarios descendente");
         System.out.println("4. Menu principal");
+        System.out.println("×××××××××××××××××××××××××××××××");
         opcion = leer.nextInt(); //crea y almacena una variable de tipo entero para la opcion
         switch(opcion){
             case 1: 
@@ -192,12 +194,13 @@ public class menu {
     }
 
     static void metodo_contador() {
-        
+        System.out.println("×××××××××××××××××××××××××××××××");
         System.out.println("-PROGRAMA CONTADOR DE DIGITOS REPETIDOS");
         System.out.println("1. Ingresar numero");
         System.out.println("2. Ingresar numero a buscar");
         System.out.println("3. Mostrar numero de digitos");
         System.out.println("4. Menu principal");
+        System.out.println("×××××××××××××××××××××××××××××××");
         opcion = leer.nextInt(); //crea y almacena una variable de tipo entero para la opcion
         
         switch(opcion){
@@ -231,15 +234,19 @@ public class menu {
                         
                    }
                     }
-            
-                    System.out.println("Buscando digitos con: "+buscador+" en "+numero_contar);
-                    System.out.println("Numero de digitos "+contador);
+                    System.out.println("×××××××××××××××××××××××××××××××");
+
+                    System.out.println("\033[32mBuscando digitos con: \033[30m"+buscador+" \033[32men \033[30m"+numero_contar);
+                    System.out.println("\033[32mNumero de digitos \033[30m"+contador);
+                    
+                    System.out.println("×××××××××××××××××××××××××××××××");
                     System.err.println("••• Regresando...");
                     metodo_contador();
                     break;
                     
             case 4: System.err.println("••• Regresando...");
                     menu.main(null);
+                    break;
                     
             default: //vuelve a cargar el menu si no se es seleccionada ninguna opcion valida
                     metodo_contador();
@@ -251,12 +258,12 @@ public class menu {
     static void metodo_organizar() {
         //usare arreglos...
         
-        
+        System.out.println("×××××××××××××××××××××××××××××××");
         System.out.println("-PROGRAMA TRES NUMEROS DE MAYOR A MENOR");
         System.out.println("1. Ingresar numeros");
         System.out.println("2. Mostrar Ordenados");
         System.out.println("3. Menu principal");
-        
+        System.out.println("×××××××××××××××××××××××××××××××");
         opcion = leer.nextInt(); //crea y almacena una variable de tipo entero para la opcion
         switch(opcion){
             case 1:
@@ -275,11 +282,14 @@ public class menu {
                     metodo_organizar();
                     break;
                     
-            case 2: System.out.println("Mostrando Numeros de mayor a menor");
+            case 2: System.out.println("×××××××××××××××××××××××××××××××");
+                    System.out.println("Mostrando Numeros de mayor a menor");
                     Arrays.sort(numeros);//ordenara los numeros de menor a mayor
                     for(int i = numeros.length-1;i>=0;i--){ //imprimira los numeros anteriror mente ordenados de mayor a menor
-                        System.out.println(""+numeros[i]);
+                        System.out.println("\033[32m"+numeros[i]);
                     }
+                            System.out.println("×××××××××××××××××××××××××××××××");
+
                     System.out.println("••• Regresando...");
                     metodo_organizar();
                     break;
@@ -293,7 +303,7 @@ public class menu {
 
     static void metodo_promedio() {
         //se necesitara matriz de 6x6 // usando la logica de los usuarios... aplicandola a una matriz de 6x6
-        
+        System.out.println("×××××××××××××××××××××××××××××××");
                     System.out.println("•Ingrese id de estudiante #1"); //usare un for para ingresar los numeros
                     id[0][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -308,7 +318,7 @@ public class menu {
                     id[0][5]=((id[0][1]+id[0][2]+id[0][3]+id[0][4]))/4; //promedio
                     
                     System.out.println("");
-                    
+        System.out.println("×××××××××××××××××××××××××××××××");            
                     System.out.println("•Ingrese id de estudiante #2"); //usare un for para ingresar los numeros
                     id[1][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -323,7 +333,7 @@ public class menu {
                     id[1][5]=((id[1][1]+id[1][2]+id[1][3]+id[1][4]))/4; //promedio
                     
                     System.out.println("");
-                    
+        System.out.println("×××××××××××××××××××××××××××××××");            
                     System.out.println("•Ingrese id de estudiante #3"); //usare un for para ingresar los numeros
                     id[2][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -338,7 +348,7 @@ public class menu {
                     id[2][5]=((id[2][1]+id[2][2]+id[2][3]+id[2][4]))/4; //promedio
                     
                     System.out.println("");
-                    
+         System.out.println("×××××××××××××××××××××××××××××××");           
                     System.out.println("•Ingrese id de estudiante #4"); //usare un for para ingresar los numeros
                     id[3][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -353,7 +363,7 @@ public class menu {
                     id[3][5]=((id[3][1]+id[3][2]+id[3][3]+id[3][4]))/4; //promedio
                     
                     System.out.println("");
-                    
+         System.out.println("×××××××××××××××××××××××××××××××");           
                     System.out.println("•Ingrese id de estudiante #5"); //usare un for para ingresar los numeros
                     id[4][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -368,7 +378,7 @@ public class menu {
                     id[4][5]=((id[4][1]+id[4][2]+id[4][3]+id[4][4]))/4; //promedio
                     
                     System.out.println("");
-                    
+        System.out.println("×××××××××××××××××××××××××××××××");            
                     System.out.println("•Ingrese id de estudiante #6"); //usare un for para ingresar los numeros
                     id[5][0]=leer.nextInt();
                     System.out.println("Ingrese Nota #1");
@@ -392,7 +402,17 @@ public class menu {
                     System.out.println("►"+id[3][0]+" | "+id[3][1]+" | "+id[3][2]+" | "+id[3][3]+" | "+id[3][4]+" | "+id[3][5]+"◄");
                     System.out.println("►"+id[4][0]+" | "+id[4][1]+" | "+id[4][2]+" | "+id[4][3]+" | "+id[4][4]+" | "+id[4][5]+"◄");
                     System.out.println("►"+id[5][0]+" | "+id[5][1]+" | "+id[5][2]+" | "+id[5][3]+" | "+id[5][4]+" | "+id[5][5]+"◄");
-
+System.out.println("××××××××××××××××××××××××××××××××××××××××××××");
+                    System.out.println("Ingrese cualquier numero para volver al menu principal");
+                    try{
+                    opcion = leer.nextInt();
+                    }catch(Exception e){
+                        System.out.println("Ingrese valor numerico..");
+                    }
+                    switch(opcion){
+                        default: System.out.println("•••Regresando...");
+                                    menu.main(null);
+                    }
                     
     }
 
